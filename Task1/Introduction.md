@@ -26,5 +26,3 @@ E：表示经验，即历史的数据集。
 
 
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
-![机器学习图](https://user-images.githubusercontent.com/62379948/111166503-1f09cc80-85db-11eb-9c0d-5837d0b02486.jpg)
