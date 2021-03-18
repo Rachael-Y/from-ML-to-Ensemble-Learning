@@ -12,7 +12,7 @@
 
 预测建模就是使用历史数据建立一个模型，去给没有答案的新数据做预测的问题。
 
-预测建模可以被描述成一个近似求取从输入变量（X）到输出变量（y）的映射函数的数学问题。这被称为函数逼近问题。
+而预测建模可以被描述成一个近似求取从输入变量（X）到输出变量（y）的映射函数的数学问题。这被称为函数逼近问题。
 
 
 
@@ -322,5 +322,15 @@ LightGBM作为另一个使用基于树的学习算法的梯度增强框架。在
 
 更多请参考：https://lightgbm.readthedocs.io/en/latest/
 
-
-
+```
+import lightgbm as lgb
+gbm = lgb.LGBMRegressor(num_leaves=31,
+                        learning_rate=0.05,
+                        n_estimators=20)
+gbm.fit(X_train, y_train,
+        eval_set=[(X_train, y_train)], 
+        eval_metric='logloss',
+        verbose=100)
+y_pred = gbm.predict(X_test)
+print(mean_squared_error(y_test, y_pred))
+```
