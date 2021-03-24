@@ -70,6 +70,7 @@ RandomizedSearchCV(clf,param_distributions=param_dist,n_iter=n_iter_search, cv=5
 具体含义参考：RandomizedSearchCV
 
 2.2.2 代码实战
+```
 #随机搜索
 from scipy.stats import randint as sp_randint
 from sklearn.model_selection import RandomizedSearchCV
@@ -94,6 +95,7 @@ random_search = RandomizedSearchCV(clf,param_distributions =param_test,n_iter=20
 random_search.fit(X,y)
 print("随机搜索最优得分：",random_search.best_score_)
 print("随机搜索最优参数组合：\n",random_search.best_params_)
+```
 
 
 
