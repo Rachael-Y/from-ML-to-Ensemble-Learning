@@ -35,3 +35,19 @@ https://scikit-learn.org/stable/modules/model_evaluation.html#classification-met
 (https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics)
 
 
+(3) 基于概率的分类模型：
+  1. 线性判别分析：
+  2. 朴素贝叶斯
+  3. 支持向量机SVM
+  4. 决策树
+  5. 逻辑回归
+  6. 非线性支持向量机
+  
+(4) 评估模型的性能并调参:
+https://zhuanlan.zhihu.com/p/140040705
+(https://zhuanlan.zhihu.com/p/140040705)
+  1.使用网格搜索进行超参数调优：
+    方式1：网格搜索GridSearchCV()
+    方式2：随机网格搜索RandomizedSearchCV()
+  2. 混淆矩阵
+  3. ROC曲线
