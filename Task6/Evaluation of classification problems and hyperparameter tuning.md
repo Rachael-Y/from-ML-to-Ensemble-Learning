@@ -180,7 +180,8 @@ plt.show()
 ```
 
 
-![png](output_17_0.png)
+![output_17_0](https://user-images.githubusercontent.com/62379948/112872549-15ac5400-90f3-11eb-81ae-1bfa616e1544.png)
+
 
 
 
@@ -208,7 +209,8 @@ plt.show()
 ```
 
 
-![png](output_18_0.png)
+![output_18_0](https://user-images.githubusercontent.com/62379948/112872530-11803680-90f3-11eb-915d-870a92872da7.png)
+
 
 
 **4. 通过网格搜索进行超参数调优**
@@ -318,7 +320,8 @@ plt.show()
 ```
 
 
-![png](output_27_0.png)
+![output_27_0](https://user-images.githubusercontent.com/62379948/112872498-0927fb80-90f3-11eb-9390-9b192c45a1fb.png)
+
 
 
 
@@ -382,7 +385,8 @@ plt.show()
 
 
 
-![png](output_30_1.png)
+![output_30_1](https://user-images.githubusercontent.com/62379948/112872464-ff9e9380-90f2-11eb-8db3-d348114106e6.png)
+
 
 
 
