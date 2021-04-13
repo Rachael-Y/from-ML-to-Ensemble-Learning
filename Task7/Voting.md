@@ -8,7 +8,8 @@
 
 为了在概念上区分，用圆形、三角形、正方形代表类标签，如下图所示：
 
- ![842de1a3-b870-4195-bc96-50b268abf37f](/Users/rachael-y/Downloads/842de1a3-b870-4195-bc96-50b268abf37f.png)
+ 
+
 
 
 
@@ -28,7 +29,7 @@
 
  
 
-![53d6fefc-6081-472b-a4d5-34c0f43350e9](/Users/rachael-y/Downloads/53d6fefc-6081-472b-a4d5-34c0f43350e9.png)
+
 
  
 
@@ -44,7 +45,8 @@
 
 
 
-![640-2](/Users/rachael-y/Desktop/640-2.webp)
+
+
 
 从上图中可以看出，只要基本分类器的性能优于随机猜测，集成的错误概率总是优于单个基本分类器的错误概率。
 
@@ -56,13 +58,15 @@
 
 ROC AUC面积计算结果如下图所示：
 
-![640-3](/Users/rachael-y/Desktop/640-3.webp)
+
+
 
 
 
 从上图可以看出，多数投票分类器超过全部单个分类器的性能。下面以鸢尾花分类为例，对比单个分类器分类能力和多数投票法的差别，如下图所示：
 
-![图片](https://mmbiz.qpic.cn/sz_mmbiz_png/0sjkh9Qia8gicyhkj4oLelphsJJkXiaYTqnMyCOA3zduHa18XvO8AhK0zFfD7EETLtbGtS32whXriaiadXvEyGwvxWw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+
 
 
 
@@ -104,4 +108,3 @@ Multiclass：多级分类
 
 
 
-![640-4](/Users/rachael-y/Desktop/640-4.webp)
