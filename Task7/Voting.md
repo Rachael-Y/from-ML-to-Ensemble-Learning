@@ -8,8 +8,8 @@
 
 为了在概念上区分，用圆形、三角形、正方形代表类标签，如下图所示：
 
- 
 
+![842de1a3-b870-4195-bc96-50b268abf37f](https://user-images.githubusercontent.com/62379948/114577029-43c29400-9cae-11eb-8c66-b1a0e410b938.png)
 
 
 
@@ -28,8 +28,7 @@
 采用绝对多数投票法的一般集成方法实现原理，如下图所示：
 
  
-
-
+![53d6fefc-6081-472b-a4d5-34c0f43350e9](https://user-images.githubusercontent.com/62379948/114577142-5a68eb00-9cae-11eb-9b09-fedf23e1eada.png)
 
  
 
@@ -44,8 +43,7 @@
 下面我们看一下基本分类与集成分类的错误对比，以便更好地认识集成分类的优势，如下图所示：
 
 
-
-
+![160c961e-416a-483f-a6db-ef04e7b6c983](https://user-images.githubusercontent.com/62379948/114577202-6654ad00-9cae-11eb-96c1-b900194ef84b.png)
 
 
 从上图中可以看出，只要基本分类器的性能优于随机猜测，集成的错误概率总是优于单个基本分类器的错误概率。
@@ -59,15 +57,14 @@
 ROC AUC面积计算结果如下图所示：
 
 
-
+![27535c50-0ada-4738-8aa7-d341337718c7](https://user-images.githubusercontent.com/62379948/114577239-6b196100-9cae-11eb-83ff-0d98d8d11c49.png)
 
 
 
 从上图可以看出，多数投票分类器超过全部单个分类器的性能。下面以鸢尾花分类为例，对比单个分类器分类能力和多数投票法的差别，如下图所示：
 
 
-
-
+![f35ced62-a7a8-4559-ad5b-a545e0c9184a](https://user-images.githubusercontent.com/62379948/114577324-7cfb0400-9cae-11eb-80bb-f5aace138007.png)
 
 
 从上图可以看出，多数投票法相比于其他3个分类算法分类效果要好一些。
