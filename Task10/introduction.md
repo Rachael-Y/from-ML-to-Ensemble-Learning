@@ -41,10 +41,6 @@ minβ,γN∑i=1L(yi,βb(xi;γ))minβ,γ∑i=1NL(yi,βb(xi;γ))
 
 
 
-
-
-
-
 (1) 基于残差学习的提升树算法：
 在前面的学习过程中，我们一直讨论的都是分类树，比如Adaboost算法，并没有涉及回归的例子。在上一小节我们提到了一个加法模型+前向分步算法的框架，那能否使用这个框架解决回归的例子呢？答案是肯定的。接下来我们来探讨下如何使用加法模型+前向分步算法的框架实现回归问题。
 在使用加法模型+前向分步算法的框架解决问题之前，我们需要首先确定框架内使用的基函数是什么，在这里我们使用决策树分类器。前面第二章我们已经学过了回归树的基本原理，树算法最重要是寻找最佳的划分点，分类树用纯度来判断最佳划分点使用信息增益（ID3算法），信息增益比（C4.5算法），基尼系数（CART分类树）。但是在回归树中的样本标签是连续数值，可划分点包含了所有特征的所有可取的值。所以再使用熵之类的指标不再合适，取而代之的是平方误差，它能很好的评判拟合程度。基函数确定了以后，我们需要确定每次提升的标准是什么。回想Adaboost算法，在Adaboost算法内使用了分类错误率修正样本权重以及计算每个基本分类器的权重，那回归问题没有分类错误率可言，也就没办法在这里的回归问题使用了，因此我们需要另辟蹊径。模仿分类错误率，我们用每个样本的残差表示每次使用基函数预测时没有解决的那部分问题。因此，我们可以得出如下算法：
@@ -65,7 +61,10 @@ minβ,γN∑i=1L(yi,βb(xi;γ))minβ,γ∑i=1NL(yi,βb(xi;γ))
 ![jupyter](vscode-webview-resource://87cb26c1-bba7-4ba6-b3cc-3813acf674f9/file///Users/rachael-y/Desktop/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/CH4-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E4%B9%8Bboosting/4.png)
 ![jupyter](vscode-webview-resource://87cb26c1-bba7-4ba6-b3cc-3813acf674f9/file///Users/rachael-y/Desktop/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/CH4-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E4%B9%8Bboosting/5.png)
 至此，我们已经能够建立起依靠加法模型+前向分步算法的框架解决回归问题的算法，叫提升树算法。那么，这个算法还是否有提升的空间呢？
+
+
 (2) 梯度提升决策树算法(GBDT)：
+
 提升树利用加法模型和前向分步算法实现学习的过程，当损失函数为平方损失和指数损失时，每一步优化是相当简单的，也就是我们前面探讨的提升树算法和Adaboost算法。但是对于一般的损失函数而言，往往每一步的优化不是那么容易，针对这一问题，我们得分析问题的本质，也就是是什么导致了在一般损失函数条件下的学习困难。对比以下损失函数：
 
  Setting Loss Function −∂L(yi,f(xi))/∂f(xi) Regression 12[yi−f(xi)]2yi−f(xi) Regression |yi−f(xi)|sign[yi−f(xi)] Regression Huber yi−f(xi) for |yi−f(xi)|≤δmδmsign[yi−f(xi)] for |yi−f(xi)|>δm where δm=α th-quantile {|yi−f(xi)|} Classification Deviance k th component: I(yi=Gk)−pk(xi) Setting Loss Function −∂L(yi,f(xi))/∂f(xi) Regression 12[yi−f(xi)]2yi−f(xi) Regression |yi−f(xi)|sign⁡[yi−f(xi)] Regression Huber yi−f(xi) for |yi−f(xi)|≤δmδmsign⁡[yi−f(xi)] for |yi−f(xi)|>δm where δm=α th-quantile {|yi−f(xi)|} Classification Deviance k th component: I(yi=Gk)−pk(xi)
@@ -134,13 +133,6 @@ f(x)=1.475+0.1∗(0.2250+0.2025+0.1823+0.164+0.1476)=1.56714f(x)=1.475+0.1∗(0.
 https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html#sklearn.ensemble.GradientBoostingRegressor
 https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html?highlight=gra#sklearn.ensemble.GradientBoostingClassifier
 
-
-
-
-
-
-
-[9]
 
 
 
@@ -236,13 +228,6 @@ mean_squared_error(y_test, est.predict(X_test))
 5.009154859960321
 ```
 
-
-
-
-
-
-
-[10]
 
 
 
