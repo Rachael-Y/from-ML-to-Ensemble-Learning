@@ -82,30 +82,26 @@ Lδ(y,f(x))={12(y−f(x))2 for |y−f(x)|≤δδ|y−f(x)|−12δ2 otherwise Lδ
 - 得到回归树：^f(x)=fM(x)=∑Mm=1∑Jj=1cmjI(x∈Rmj)f^(x)=fM(x)=∑m=1M∑j=1JcmjI(x∈Rmj)
 
 下面，我们来使用一个具体的案例来说明GBDT是如何运作的(案例来源：https://blog.csdn.net/zpalyq110/article/details/79527653 )：
-下面的表格是数据：
-![jupyter](vscode-webview-resource://87cb26c1-bba7-4ba6-b3cc-3813acf674f9/file///Users/rachael-y/Desktop/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/CH4-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E4%B9%8Bboosting/6.png)
+
 学习率：learning_rate=0.1，迭代次数：n_trees=5，树的深度：max_depth=3
 平方损失的负梯度为：
 
 −[∂L(y,f(xi)))∂f(xi)]f(x)=ft−1(x)=y−f(xi)−[∂L(y,f(xi)))∂f(xi)]f(x)=ft−1(x)=y−f(xi)
 
 c=(1.1+1.3+1.7+1.8)/4=1.475，f0(x)=c=1.475c=(1.1+1.3+1.7+1.8)/4=1.475，f0(x)=c=1.475
-![jupyter](vscode-webview-resource://87cb26c1-bba7-4ba6-b3cc-3813acf674f9/file///Users/rachael-y/Desktop/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/CH4-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E4%B9%8Bboosting/8.png)
+
 学习决策树，分裂结点：
-![jupyter](vscode-webview-resource://87cb26c1-bba7-4ba6-b3cc-3813acf674f9/file///Users/rachael-y/Desktop/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/CH4-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E4%B9%8Bboosting/9.png)
-![jupyter](vscode-webview-resource://87cb26c1-bba7-4ba6-b3cc-3813acf674f9/file///Users/rachael-y/Desktop/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/CH4-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E4%B9%8Bboosting/10.png)
+
 对于左节点，只有0，1两个样本，那么根据下表我们选择年龄7进行划分：
-![jupyter](vscode-webview-resource://87cb26c1-bba7-4ba6-b3cc-3813acf674f9/file///Users/rachael-y/Desktop/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/CH4-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E4%B9%8Bboosting/11.png)
+
 对于右节点，只有2，3两个样本，那么根据下表我们选择年龄30进行划分：
-![jupyter](vscode-webview-resource://87cb26c1-bba7-4ba6-b3cc-3813acf674f9/file///Users/rachael-y/Desktop/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/CH4-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E4%B9%8Bboosting/12.png)
-![jupyter](vscode-webview-resource://87cb26c1-bba7-4ba6-b3cc-3813acf674f9/file///Users/rachael-y/Desktop/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/CH4-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E4%B9%8Bboosting/13.png)
 
 因此根据Υj1=argminΥ∑xi∈Rj1L(yi,f0(xi)+Υ)Υj1=arg⁡min⏟Υ∑xi∈Rj1L(yi,f0(xi)+Υ)：
 
 (x0∈R11),Υ11=−0.375(x1∈R21),Υ21=−0.175(x2∈R31),Υ31=0.225(x3∈R41),Υ41=0.325(x0∈R11),Υ11=−0.375(x1∈R21),Υ21=−0.175(x2∈R31),Υ31=0.225(x3∈R41),Υ41=0.325
 
 这里其实和上面初始化学习器是一个道理，平方损失，求导，令导数等于零，化简之后得到每个叶子节点的参数ΥΥ,其实就是标签值的均值。 最后得到五轮迭代：
-![jupyter](vscode-webview-resource://87cb26c1-bba7-4ba6-b3cc-3813acf674f9/file///Users/rachael-y/Desktop/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/CH4-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E4%B9%8Bboosting/14.png)
+
 最后的强学习器为：f(x)=f5(x)=f0(x)+∑5m=1∑4j=1ΥjmI(x∈Rjm)f(x)=f5(x)=f0(x)+∑m=15∑j=14ΥjmI(x∈Rjm)。
 其中：
 
