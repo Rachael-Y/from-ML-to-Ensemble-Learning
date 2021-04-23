@@ -55,11 +55,7 @@ minβ,γN∑i=1L(yi,βb(xi;γ))minβ,γ∑i=1NL(yi,βb(xi;γ))
 
 下面我们用一个实际的案例来使用这个算法：(案例来源：李航老师《统计学习方法》)
 训练数据如下表，学习这个回归问题的提升树模型，考虑只用树桩作为基函数。
-![jupyter](vscode-webview-resource://87cb26c1-bba7-4ba6-b3cc-3813acf674f9/file///Users/rachael-y/Desktop/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/CH4-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E4%B9%8Bboosting/1.png)
-![jupyter](vscode-webview-resource://87cb26c1-bba7-4ba6-b3cc-3813acf674f9/file///Users/rachael-y/Desktop/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/CH4-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E4%B9%8Bboosting/2.png)
-![jupyter](vscode-webview-resource://87cb26c1-bba7-4ba6-b3cc-3813acf674f9/file///Users/rachael-y/Desktop/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/CH4-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E4%B9%8Bboosting/3.png)
-![jupyter](vscode-webview-resource://87cb26c1-bba7-4ba6-b3cc-3813acf674f9/file///Users/rachael-y/Desktop/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/CH4-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E4%B9%8Bboosting/4.png)
-![jupyter](vscode-webview-resource://87cb26c1-bba7-4ba6-b3cc-3813acf674f9/file///Users/rachael-y/Desktop/%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0/CH4-%E9%9B%86%E6%88%90%E5%AD%A6%E4%B9%A0%E4%B9%8Bboosting/5.png)
+
 至此，我们已经能够建立起依靠加法模型+前向分步算法的框架解决回归问题的算法，叫提升树算法。那么，这个算法还是否有提升的空间呢？
 
 
@@ -120,8 +116,6 @@ f0(x)=1.475f2(x)=0.0205f3(x)=0.1823f4(x)=0.1640f5(x)=0.1476f0(x)=1.475f2(x)=0.02
 f(x)=1.475+0.1∗(0.2250+0.2025+0.1823+0.164+0.1476)=1.56714f(x)=1.475+0.1∗(0.2250+0.2025+0.1823+0.164+0.1476)=1.56714
 
 为什么要用学习率呢？这是Shrinkage的思想，如果每次都全部加上（学习率为1）很容易一步学到位导致过拟合。
-
-
 
 
 
